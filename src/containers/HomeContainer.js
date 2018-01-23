@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import Home from '../components/Home.js'
+import { Route, Switch, Link, withRouter} from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class HomeContainer extends Component{
   render(){
@@ -10,5 +13,6 @@ class HomeContainer extends Component{
     )
   }
 }
+
 
 export default HomeContainer;

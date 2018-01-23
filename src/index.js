@@ -10,7 +10,7 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import postsReducer from './reducers/postsReducer'
 
-const rootReducer = combineReducers({post: postsReducer})
+const rootReducer = combineReducers({posts: postsReducer})
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));

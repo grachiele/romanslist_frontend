@@ -6,10 +6,7 @@ function fetchPosts(posts){
   }
 }
 
-
-
-
-export function listPosts(posts){
+export function listPosts(){
   return function(dispatch){
     fetch('http://localhost:3000/api/v1/posts')
     .then(res => res.json())

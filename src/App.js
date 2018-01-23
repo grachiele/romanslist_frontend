@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link, withRouter} from 'react-router-dom'
+import { connect } from 'react-redux'
 import './App.css';
 import HomeContainer from './containers/HomeContainer'
-import listPosts from './actions/posts'
+import { listPosts } from './actions/posts'
 
 class App extends Component {
   constructor(props){
     super(props)
-    props.
+    props.retrievePosts()
   }
   render() {
+
     return (
       <div>
         <Switch>
@@ -21,4 +23,18 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapDispatchToProps(dispatch) {
+  return {
+    retrievePosts: () => {
+      dispatch(listPosts())
+    }
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    currentPosts: state.posts
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -4,10 +4,6 @@ import { connect } from 'react-redux'
 
 class Home extends React.Component {
 
-  constructor(props){
-    super(props)
-  }
-
   render(){
     const posts = this.props.posts.map((post) =>
       <div key={post.id}>
